@@ -1,4 +1,4 @@
-# normalize-package-data [![Build Status](https://travis-ci.org/npm/normalize-package-data.png?branch=master)](https://travis-ci.org/npm/normalize-package-data)
+# @zkochan/normalize-package-data [![Build Status](https://travis-ci.org/npm/normalize-package-data.png?branch=master)](https://travis-ci.org/npm/normalize-package-data)
 
 normalize-package data exports a function that normalizes package metadata. This data is typically found in a package.json file, but in principle could come from any source - for example the npm registry.
 
@@ -7,7 +7,7 @@ normalize-package-data is used by [read-package-json](https://npmjs.org/package/
 ## Installation
 
 ```
-npm install normalize-package-data
+npm install @zkochan/normalize-package-data
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install normalize-package-data
 Basic usage is really simple. You call the function that normalize-package-data exports. Let's call it `normalizeData`.
 
 ```javascript
-normalizeData = require('normalize-package-data')
+normalizeData = require('@zkochan/normalize-package-data')
 packageData = fs.readFileSync("package.json")
 normalizeData(packageData)
 // packageData is now normalized
@@ -26,7 +26,7 @@ normalizeData(packageData)
 You may activate strict validation by passing true as the second argument.
 
 ```javascript
-normalizeData = require('normalize-package-data')
+normalizeData = require('@zkochan/normalize-package-data')
 packageData = fs.readFileSync("package.json")
 warnFn = function(msg) { console.error(msg) }
 normalizeData(packageData, true)
@@ -40,7 +40,7 @@ If strict mode is activated, only Semver 2.0 version strings are accepted. Other
 Optionally, you may pass a "warning" function. It gets called whenever the `normalizeData` function encounters something that doesn't look right. It indicates less than perfect input data.
 
 ```javascript
-normalizeData = require('normalize-package-data')
+normalizeData = require('@zkochan/normalize-package-data')
 packageData = fs.readFileSync("package.json")
 warnFn = function(msg) { console.error(msg) }
 normalizeData(packageData, warnFn)
